@@ -9,6 +9,7 @@ from sys import argv
 
 videos=[]
 frames=[]
+fps=[]
 width=[]
 height=[]
 presets = ["ultrafast", "superfast", "veryfast", "faster", "fast", "medium", "slow", "slower", "veryslow", "placebo"]
