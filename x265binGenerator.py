@@ -25,9 +25,10 @@ def load_in():
 		value = line.split(';')
 		if value[0][0]!="#":
 			videos.append(value[0])
-			frames.append(value[1])
-			width.append(value[2])
-			height.append(value[3].rstrip())
+			fps.append(value[1])
+			frames.append(value[2])
+			width.append(value[3])
+			height.append(value[4].rstrip())
 		line = f.readline()
 
 def encoder():
@@ -35,7 +36,7 @@ def encoder():
 	i=0	
 	for video in videos:
 		for preset in presets:
-			cmd = "./bin/x265 --input "+videoPath+"cct/"+video+".yuv --fps 50 --input-res "+width[i]+"x"+height[i]+" --frames "+frames[i]+" --qp "+qp+" --preset " + preset + " --ssim --psnr --output "+videoPath+"bin/"+qp+"_"+preset+"_"+video+".bin"
+			cmd = "./bin/x265 --input "+videoPath+"cct/"+video+".yuv --fps "+fps[i]+" --input-res "+width[i]+"x"+height[i]+" --frames "+frames[i]+" --qp "+qp+" --preset " + preset + " --ssim --psnr --output "+videoPath+"bin/"+qp+"_"+preset+"_"+video+".bin"
 			
 			print cmd
 			outputcmd = check_output(cmd, shell=True, stderr=STDOUT)
