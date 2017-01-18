@@ -33,7 +33,7 @@ def load_in():
 		line = f.readline()
 
 def encoder():
-	arq = open("simulation_encoder1.txt", "w")
+	arq = open("simulation_encoder"+qp+".txt", "w")
 	i=0	
 	for video in videos:
 		for preset in presets:
