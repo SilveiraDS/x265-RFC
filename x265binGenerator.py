@@ -50,12 +50,12 @@ def encoder():
 	arq.close()
 
 def decoder():
-	arq = open("simulation_decoder.txt", "w")
+	arq = open("simulation_decoder"+qp+".txt", "w")
 	for video in videos:
 		for preset in presets:
-			cmd = "./decoder -b ~/Pesquisa/videos/1920x1080/bin/"+preset+video+".bin -o ~/Pesquisa/videos/1920x1080/reconstructed/teste/"+preset+video+".yuv"
-			output = check_output(cmd, shell=True, stderr=PIPE)
+			cmd = "./bin/TAppDecoderStaticd -b ~/Pesquisa/videos/1920x1080/bin/"+qp+"_"+preset+"_"+video+".bin -o ~/Pesquisa/videos/1920x1080/reconstructed/"+preset+video+".yuv"
 			print cmd
+			output = check_output(cmd, shell=True, stderr=PIPE)
 			arq.write("######### "+preset+" #########")
 			arq.write("\n")
 			arq.write(output)
@@ -64,7 +64,16 @@ def decoder():
 
 if __name__ == "__main__":
 	# main(argv[1], int(argv[2]))
-	qp = argv[1]
-	load_in()
-	encoder()
-	# decoder()
+	if len(argv) != 3:
+		print "ERROR: wrong arguments\n"
+	else:	
+		opt = argv[1]
+		qp = argv[2]
+		load_in()
+		if opt == '1':
+			encoder()
+		elif opt == '2':
+			decoder()
+		else:
+			encoder()
+			decoder()
