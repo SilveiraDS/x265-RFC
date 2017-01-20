@@ -3,4 +3,5 @@ test/
 cmake/
 CMakeFiles/
 common/
-compat/
+output/
+*~
