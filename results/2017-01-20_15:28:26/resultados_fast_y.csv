@@ -1,0 +1,3 @@
+Sequence;Res. Type;Block Size;Table Size;Acum. Ori.;Acum. Cod.;Comp. Rate;Max. Comp.;St. Dev.;Oco. In;Oco. Out; Oco. Ori;Oco. Tot.;En. In;En. Out;En. Ori.;En. Tot;Time;
+/home/dieison/Pesquisa/videos/1920x1080/reconstructed/22_fast_rec_BasketballDrive_1920x1080_50;Double;64;64;8277811200; 3249943249;60.7391;61.6775;5.5641;1034062454;409456;254490;1034726400;3.0587;18.0000;8.0000;3.0658;       9.365;
+/home/dieison/Pesquisa/videos/1920x1080/reconstructed/27_fast_rec_BasketballDrive_1920x1080_50;Double;64;64;8277811200; 2699029171;67.3944;68.0954;4.2579;1034123993;347917;254490;1034726400;2.5458;18.0000;8.0000;2.5524;       9.400;
